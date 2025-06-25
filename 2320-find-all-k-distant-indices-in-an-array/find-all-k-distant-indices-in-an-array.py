@@ -2,19 +2,20 @@ from typing import List
 
 class Solution:
     def findKDistantIndices(self, nums: List[int], key: int, k: int) -> List[int]:
-        key_indices = []
-        result = []
+       
+        b = []
+        c = []
 
-      
-        for i in range(len(nums)):
+        for i in range(0,len(nums)):
             if nums[i] == key:
-                key_indices.append(i)
+                b.append(i)
+        print(b)
+        
+        for i in range(0,len(nums)):
+            for j in b:
+                if abs(i-j)<=k:
+                    c.append(i)
+                    break
+        return c
 
         
-        for i in range(len(nums)):
-            for j in key_indices:
-                if abs(i - j) <= k:
-                    result.append(i)
-                    break   
-
-        return result
