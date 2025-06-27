@@ -19,7 +19,7 @@ class Solution:
                     alpa.pop()
                 alpa.pop()
                 temp2 = num.pop()
-                alpa.append(int(temp2)*temp)
+                alpa.append(temp2*temp)
             i+=1
         print(alpa)
         return "".join(alpa)
