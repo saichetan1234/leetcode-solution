@@ -7,7 +7,10 @@ class Solution:
         while(len(ans) < k):
             b= ''
             for i in ans:
-                b =b + chr(ord(i)+1)
+                if i=='z':
+                    b+='a'
+                else:
+                    b =b + chr(ord(i)+1)
             ans = ans + b
         return ans[k-1]
             
