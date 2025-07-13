@@ -10,9 +10,9 @@ class Solution:
         n = len(trainers)
         count  = 0
 
-        while(l<m  and r <n ):
-            if players[l]<=trainers[r]:
-                l = l + 1
-            r = r +1
-        return l
+        while(l<n  and r <m ):
+            if trainers[l]>=players[r]:
+                r = r +1
+            l = l + 1
+        return r
         
