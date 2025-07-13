@@ -12,11 +12,7 @@ class Solution:
 
         while(l<m  and r <n ):
             if players[l]<=trainers[r]:
-                count  = count + 1
-                r = r +1
-                l = l+1
-            else:
-                r = r + 1
-        return count
-        
+                l = l + 1
+            r = r +1
+        return l
         
