@@ -6,7 +6,7 @@ class Solution:
             if i.islower():
                 res.append(i)
             elif i == "#":
-                res = res*2
+                res = res + res
             elif i == "*" and len(res) > 0:
                 res.pop()
             else:
