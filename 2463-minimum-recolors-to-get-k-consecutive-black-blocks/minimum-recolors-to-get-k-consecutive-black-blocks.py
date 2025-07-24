@@ -1,24 +1,27 @@
 class Solution:
     def minimumRecolors(self, blocks: str, k: int) -> int:
-        b = []
-        count = 0 
-        l = 0
-        ans = float('inf')
+            b = []
+            count = 0 
 
-        for r in range(len(blocks)):
-            if blocks[r] == 'B':
-                count = count + 1
-            while(r-l+1 > k):
+            for i in range(0,k):
+                if blocks[i] == 'W':
+                    count  = count + 1
                 
-                if blocks[l] == 'B':
-                    count-=1
-                l = l + 1
+            b.append(count)
 
+            for i in range(1,len(blocks)-k+1):
+                if blocks[i-1] == 'W':
+                    count = count -1
+                if blocks[i+k-1] == 'W':
+                    count  = count + 1
+                b.append(count)
+            print(b)
+            return min(b)
             
-            if r-l+1 ==k:
-
-                ans = min(ans,k - count)
-        return ans
+                
+                
+            
+        
 
 
 
