@@ -3,7 +3,6 @@ class Solution:
         count={}
         for i in range(len(nums)):
             count[nums[i]]=i
-        
         sums=sum(nums)
         maxi=float('-inf')
         for i in range(len(nums)):
