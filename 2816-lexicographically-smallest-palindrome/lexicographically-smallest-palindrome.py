@@ -1,18 +1,16 @@
 class Solution:
     def makeSmallestPalindrome(self, s: str) -> str:
-        b = list(s)
+        l=0
+        r=len(s)-1
+        s1=list(s)
+        while l<r:
+            if s1[l]!=s1[r]:
+                if s1[l]<s1[r]:
+                    s1[r]=s1[l]
+                else:
+                    s1[l]=s1[r]
+            l+=1
+            r-=1
 
-        l = 0
-        r = len(s) -1
-
-        while(l<r):
-            if b[l]!=b[r]:
-                maxi = min(b[l],b[r])
-                b[l] = maxi
-                b[r] = maxi
-
-            l = l+ 1
-            r = r -1  
-        print(b)
-        return "".join(b)    
+        return "".join(s1)
         
