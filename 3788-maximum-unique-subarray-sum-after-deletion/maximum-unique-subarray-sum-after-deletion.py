@@ -1,18 +1,22 @@
 class Solution:
     def maxSum(self, nums: List[int]) -> int:
 
-        temp = list(set(nums))
+        if max(nums)<=0:
+            return max(nums)
 
-        temp.sort()
-        if temp[-1] <0:
-            return temp[-1]
-        print(temp)
+        temp = {}
+
+        for i in nums:
+            temp[i] = temp.get(i,0) + 1
         b = []
-        for i in temp:
-            if i >0:
-                b.append(i)
-        print(sum(b))
+
+        for key,value in temp.items():
+            if key>0 :
+                b.append(key)
+        print(b)
         return sum(b)
+        
 
 
+        
         
