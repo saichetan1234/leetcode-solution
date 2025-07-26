@@ -13,10 +13,10 @@ class Solution:
             path.append(root.val)
             if not root.left and not root.right and curr==root.val:
                 ans.append(path[:])
-            if check(root.left,curr-root.val,path) or check(root.right,curr-root.val,path):
-                return True
+            check(root.left,curr-root.val,path)
+            check(root.right,curr-root.val,path)
             path.pop()
-            return False
+            
         check(root,targetSum,[])
         return ans
         
