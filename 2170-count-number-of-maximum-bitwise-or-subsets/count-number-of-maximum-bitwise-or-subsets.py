@@ -36,10 +36,11 @@ class Solution:
             d.append(value)
         
         ans1 = max(d)
-        
         return ans1
         
-       
-       
+        for key,value in temp.items():
+            if value == ans1:
+                c.append(key)
+        print(c)
 
         
