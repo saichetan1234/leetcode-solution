@@ -6,7 +6,6 @@ class Solution:
             arr.append(j**x)
             j+=1
         m=len(arr)
-        
         dp=[[-1 for _ in range(n+1)] for _ in range(m)]
         def check(index,target):
             if target==0:
@@ -22,4 +21,5 @@ class Solution:
             return dp[index][target]
         return check(0,n) % (10**9+7)
 
+        
         
