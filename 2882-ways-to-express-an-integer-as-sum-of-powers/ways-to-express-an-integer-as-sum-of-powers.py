@@ -6,15 +6,19 @@ class Solution:
             arr.append(j**x)
             j+=1
         m=len(arr)
-        dp=[[0 for _ in range(n+1)] for _ in range(m+1)]
-        dp[0][0]=1
-        for i in range(1,m+1):
-             for j in range(n+1):
-                 dp[i][j]=dp[i-1][j]
-                 if i**x<=j:
-                     dp[i][j]+=dp[i-1][j-i**x]
-        return dp[m][n] % (10**9+7)
-        
+        dp=[[-1 for _ in range(n+1)] for _ in range(m)]
+        def check(index,target):
+            if target==0:
+                return 1
+            if index>=m or target<0:
+                return 0
+            if dp[index][target]!=-1:
+                return dp[index][target]
+            paths=0
+            paths+=check(index+1,target)
+            paths+=check(index+1,target-arr[index])
+            dp[index][target]=paths
+            return dp[index][target]
+        return check(0,n) % (10**9+7)
 
-        
         
