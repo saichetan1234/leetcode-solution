@@ -5,8 +5,9 @@ class Solution:
         odd=n**2
         even=n*(n+1)
         ans=0
-        for i in range(1,min(odd,even)):
-            if odd%i==0 and even%i==0:
-                ans=i
-        return ans
+
+        while even!=0:
+            odd,even = even,odd%even
+        return odd
+        
         
