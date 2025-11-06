@@ -12,7 +12,7 @@ class Solution:
             b.append(nums[i])
         print(b)
 
-        for i in range(0,len(nums)-k):
+        for i in range(0,len(nums) - k):
             c.append(nums[i])
         print(c)
 
