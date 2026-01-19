@@ -9,6 +9,7 @@ class Solution:
 
         ans  = max(temp,key=temp.get)
         print(ans)
+        print(temp[ans])
 
         if temp[ans]>(len(s)+1)/2:
             return ""
@@ -26,6 +27,7 @@ class Solution:
         print(i)
 
         for key in temp:
+            print(temp[key])
             while temp[key]>0:
                 if i >= len(s):
                     i = 1
