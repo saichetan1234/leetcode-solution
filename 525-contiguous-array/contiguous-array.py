@@ -2,31 +2,33 @@ class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
 
         b = []
-        for i in nums:
+        k = 0
+        hashmap = {}
+        sumi = 0
+        maxi = 0
+
+        for i in nums :
             if i ==0:
                 b.append(-1)
             else:
-                b.append(i)
+                b.append(1)
         print(b)
 
-        seen = {}
-
-        maxi = 0
-
-        sumi = 0
 
         for i in range(len(b)):
             sumi = sumi + b[i]
 
-            if sumi ==0:
-                maxi = i + 1
-            
-            elif sumi in seen:
-                maxi = max(maxi,i-seen[sumi])
+            if sumi==k:
+                maxi =  max(maxi,i+1)
 
-            else:
-                seen[sumi] = i
+            if sumi-k in hashmap:
+                maxi = max(maxi,i-hashmap[sumi-k])
+
+            if sumi not in hashmap:
+                hashmap[sumi] = i
+
         return maxi
 
-       
-      
+
+           
+           
