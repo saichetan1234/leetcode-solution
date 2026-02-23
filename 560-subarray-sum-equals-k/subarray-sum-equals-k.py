@@ -1,21 +1,17 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         sumi = 0
-        count  = 0 
-
-        hasmap = {0:1}
+        count  = 0
+        maps = {0:1}
 
         for i in nums:
             sumi =  sumi + i
 
-            if sumi - k in hasmap:
-                count  =  count + hasmap[sumi-k]
+            if sumi  - k in maps:
+                count  =  count + maps[sumi-k]
 
-            hasmap[sumi] = hasmap.get(sumi,0) + 1
+            maps[sumi] = maps.get(sumi,0) + 1
 
         return count
-
-       
-
         
         
