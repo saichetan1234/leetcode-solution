@@ -6,6 +6,7 @@ class Solution:
 
         count  = 0
         l =0
+        b = []
 
         for i in range(len(nums)):
             sumi = sumi + nums[i]
@@ -14,7 +15,7 @@ class Solution:
                 sumi =  sumi - nums[l]
                 l = l + 1
 
-            count  =  count + (i-l+1)
+            count  =  count +(i-l+1)
 
         return count 
 
