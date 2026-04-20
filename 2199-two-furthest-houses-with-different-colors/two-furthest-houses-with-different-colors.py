@@ -3,7 +3,7 @@ class Solution:
         b = []
         for i in range(len(colors)):
             for j in range(len(colors)):
-                if colors[i] !=colors[j] and i!=j:
+                if colors[i] !=colors[j]:
                     b.append(abs(i-j))
 
         return max(b)
