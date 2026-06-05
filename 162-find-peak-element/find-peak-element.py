@@ -18,9 +18,9 @@ class Solution:
             if nums[mid]>nums[mid-1] and nums[mid]>nums[mid+1]:
                 return mid
 
-            elif nums[mid]>nums[mid-1] and nums[mid]<nums[mid+1]:
+            elif nums[mid]>nums[mid-1]:
                 l = mid + 1
-            elif nums[mid]>nums[mid+1] and nums[mid]<nums[mid-1]:
+            elif nums[mid]>nums[mid+1] :
                 h = mid-1
             else:
                 l = mid + 1
