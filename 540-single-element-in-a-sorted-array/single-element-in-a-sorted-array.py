@@ -6,7 +6,7 @@ class Solution:
 
         h = len(nums)-2
         if n ==1:
-            return nums[n-1]
+            return nums[0]
 
         if nums[1]!=nums[0]:
             return nums[0]
