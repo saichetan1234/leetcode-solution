@@ -4,7 +4,7 @@ class Solution:
 
         l = 1
         h  = max(nums)
-        ans = []
+        ans = float("inf")
 
         while(l<=h):
             mid = (l+h)//2
@@ -12,13 +12,10 @@ class Solution:
             for i in nums:
                 ans1 = ans1+ math.ceil(i/mid)
             if ans1<=threshold:
-                ans .append(mid)
-                
-                h  = mid-1
+                ans = min(ans,mid)
+                h = mid-1
             else:
-                l= mid + 1
-
-        return ans[-1]
-
+                l = mid + 1 
+        return ans
 
         
