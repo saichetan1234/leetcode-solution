@@ -7,21 +7,19 @@ class Solution(object):
         m = len(matrix)
         n = len(matrix[0])
 
-        for i in range(0,m):
-            l = 0
-            h = n-1
-            ans = 0
+        i = 0
+        j = n-1
 
-            while(l<=h):
-                mid  = (l+h)//2
-
-                if matrix[i][mid] == target:
-                    return True
-                elif matrix[i][mid]<target:
-                    l = mid + 1
-                else:
-                    h = mid -1 
+        while i<=m-1 and j>=0:
+            if matrix[i][j]==target:
+                return True
+            
+            if matrix[i][j]>target:
+                j = j -1 
+            else:
+                i = i + 1
         return False
+
 
        
        
