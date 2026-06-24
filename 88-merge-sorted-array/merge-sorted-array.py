@@ -4,35 +4,31 @@ class Solution:
         Do not return anything, modify nums1 in-place instead.
 
         """
-        
-        b = []
-        l = 0
-        r = 0
-        j = 0
 
-        while l<m and r<n:
+        l = m-1
+        r = n-1
+        p = m+n-1
+
+        while l>=0 and r>=0:
             if nums1[l]>nums2[r]:
-                b.append(nums2[r])
-                r = r + 1
-                
+                nums1[p] = nums1[l]
+                l = l -1 
+            
             else:
-                b.append(nums1[l])
-                l = l + 1
-                
+                nums1[p] = nums2[r]
+                r = r -1 
+            p = p -1
         
-        while r <n:
-            b.append(nums2[r])
-            r = r + 1
+
+        while l>=0:
+            nums1[p] = nums1[l]
+            l = l-1
+            p = p-1
+        while r>=0:
+            nums1[p] = nums2[r]
+            r = r-1
+            p = p-1
         
-        while l < m:
-            b.append(nums1[l])
-            l = l + 1
-        print(b)
-
-
-        for i in range(len(b)):
-            nums1[i] = b [i]
-        return nums1
-
+       
 
         
