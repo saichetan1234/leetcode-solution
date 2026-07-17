@@ -3,7 +3,7 @@ class Solution:
         
         l = max(weights)
         h = sum(weights)
-        ans = float("inf")
+        ans = 0
 
         while(l<=h):
             mid = (l+h)//2
@@ -17,7 +17,7 @@ class Solution:
                     loads = loads + weights[i]
             
             if days_took<=days:
-                ans = min(ans,mid)
+                ans = mid
                 h = mid-1
             else:
                 l = mid + 1
