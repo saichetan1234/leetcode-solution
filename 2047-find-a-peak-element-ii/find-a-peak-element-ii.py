@@ -15,7 +15,7 @@ class Solution:
                 if(mat[i][mid] > maxi):
                     maxi = mat[i][mid]
                     index = i
-            row_num = index
+            
             if mid-1>=0:
                 left = mat[index][mid-1]
             else:
